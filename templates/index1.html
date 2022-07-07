@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width", initial-scale="1">
+		<title>카페 모카</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/FinalProject.css') }}">
+	</head>
+ 	<body>
+		<style type="text/css">
+			.jumbotron{
+				background-image: url("static/image/Background.jpg");
+				background-size : cover;
+				text-shadow: black 0.2em 0.2em 0.2em;
+				color:white;
+			}
+		</style>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type = "button" class ="navbar-toggle collapsed" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class ="navbar-brand" href="/">카페모카</a>
+			</div>
+			<div class="collapsed navbar-colllapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/">소개<span class="sr-only"></span></a></li>
+					<li><a href="motion_sort ">모션 종류</a></li>
+					<li class="dropdown">
+						<a href="#" class ="dropdown-toggle" data-toggle="dropdown" role="button"
+							aria-haspopup="true" aria-expanded="false">모션<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="index2.html">사진 촬영(Take photo)</a></li>
+							<li><a href="stream">동영상 촬영(Stream)</a></li>
+							<li><a href="index3.html">손동작 인식(Hand detection)</a></li>
+							<li><a href="index4.html">얼굴 인식(Face detection)</a></li>
+						</ul>
+					</li>
+				</ul>
+				<form class="navbar-form navbar-left">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="내용을 입력하세요.">
+					</div>
+					<button type = "submit" class="btn btn-default">검색</button>
+				</form>
+				<ul class="nav navbar-nav navbar-right">
+					<li class = "dropdown">
+						<a href="#" class ="dropdown-toggle" data-toggle="dropdown" role="button"
+							aria-haspopup="true" aria-expanded="false">접속하기<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="loginform.html">로그인</a></li>
+							<li><a href="registerForm.html ">회원가입</a></li>						 
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="jumbotron">
+			<h1 class="text-center"> 팀 5 - 카페 모카</h1>
+			<p class="text-center"> 모션 인식 카메라 : 모션을 인식해 동작하는 카메라 프로그램을 구현 </p>
+			<p class="text-center"><a class="btn btn-primary btn-lg" href="index2.html" role="button">Take photo</a>
+			<a class="btn btn-primary btn-lg" href="index3.html" role="button">Hand detection</a>
+			<a class="btn btn-primary btn-lg" href="index4.html" role="button">Face detection</a>
+			</p>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<h4>프로젝트 목표 </h4>
+				<p> 원하는 자세를 취했을 때, 사진이 찍히고 저장이 되는 프로그램을 구현하고자 함 </p>
+				<p><a class = "btn btn-default" data-target= "#modal" data-toggle ="modal"> 자세히 알아보기</a></p>
+			</div>
+			
+		</div>
+		<hr>
+		<div class ="panel panel-primary">
+			<div class = "panel-heading">
+				<h3 class="panel-title"><span class="glyphicon glyphicon-pencil"></span>
+				&nbsp;&nbsp;우리가 사용할 수 있는 모션들 목록</h3>
+			</div>
+			<div class="panel-body">
+				<div class="media">
+					<div class="media-left">
+						<a href="#"><img class="media-object" src="{{url_for('static', filename='image/hand(1).png')}}" alt="C언어 강의 이미지"></a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading"><a href="#">카메라 촬영</a>&nbsp;<span class="badge">Okay</span></h4>
+						손가락 모션(Okay)을 활용하여 카메라 촬영을 작동하고자 함. 
+					</div>
+				</div>
+				<hr>
+				<div class="media">
+					<div class="media-left">
+						<a href="#"><img class="media-object" src="{{url_for('static', filename='image/hand(2).png')}}" alt="Java 강의 이미지"></a>
+						
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading"><a href="#">PPT 시작</a>&nbsp;<span class="badge">Stop</span></h4>
+						손가락 모션(Stop)을 활용하여 PPT를 시작하고자 함.
+					</div>
+				</div>
+				<hr>
+				<div class="media">
+					<div class="media-left">
+						<a href="#"><img class="media-object" src="{{url_for('static', filename='image/hand(3).png')}}" alt="Java 강의 이미지"></a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading"><a href="#">화면 넘기기</a>&nbsp;<span class="badge">Point</span></h4>
+						손가락 모션(오른쪽, 왼쪽)을 활용하여 오른쪽으로 표시하면 넘기기 / 왼쪽으로 하면 돌아오기를 적용
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer style = "background-color: #000000; color: #ffffff">
+		<div class="container">
+			<br>
+			<div class="row">
+				<div class ="col-sm-2" style = "text-align: left;"><h5>Copyright &copy; 2022</h5><h5>최동철, 구광림, 김태호, 이여울, 박선규 </h5></div>
+				<div class ="col-sm-4"><h4> 팀 소개</h4><p>저희는 모션을 인식해 동작하는 카메라 프로그램을 구현하고자 하였습니다</p></div>
+				<div class ="col-sm-2"><h4 style="text-align: center;">내비게이션</h4>
+					<div class="list-group">
+						<a href="index2.html" class="list-group-item">사진 / 동영상</a>
+						<a href="index3.html" class="list-group-item">손동작 인식</a>
+						<a href="index4.html" class="list-group-item">얼굴 인식</a>
+					</div>
+				</div>
+				<div class ="col-sm-2"><h4 style="text-align: center;">SNS</h4>
+					<div class="list-group">
+						<a href="#" class="list-group-item">페이스북</a>
+						<a href="#" class="list-group-item">유튜브</a>
+						<a href="#" class="list-group-item">네이버 TV</a>
+					</div>
+				</div>
+				<div class = "col-sm-2"><h4 style="text-align: center;"><span class="glyphicon glyphicon-ok"></span>&nbsp;MediaPipe</h4></div>
+			</div>
+		</div>
+	</footer>
+	<div class="row">
+		<div class="modal" id="modal" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						모션 카메라 인식
+						<button class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class ="modal-body" style="text-align: center;">
+							PPT를 활용하여 발표할 시에 손가락 모션을 통해 제어할 수 있음 <br>
+							나아가 Flask(python)을 활용하여 제작한 홈페이지 내에서도 작동하고자 함 <br> <br>
+							<img src="{{url_for('static', filename='image/image1.jpg')}}" id = "imagepreview" style="width : 256px; height: 256px;"> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<script src = "https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src= "{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+	</body>
+</html>
+

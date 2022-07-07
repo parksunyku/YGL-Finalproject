@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width", initial-scale="1">
+		<title>카페 모카</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/FinalProject.css') }}">
+	</head>
+ 	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type = "button" class ="navbar-toggle collapsed" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class ="navbar-brand" href="/">카페모카</a>
+			</div>
+			<div class="collapsed navbar-colllapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/">소개<span class="sr-only"></span></a></li>
+					<li><a href="motion_sort ">모션 종류</a></li>
+					<li class="dropdown">
+						<a href="#" class ="dropdown-toggle" data-toggle="dropdown" role="button"
+							aria-haspopup="true" aria-expanded="false">모션<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="index2.html">사진 촬영(Take photo)</a></li>
+							<li><a href="stream">동영상 촬영(Stream)</a></li>
+							<li><a href="index3.html">손동작 인식(Hand detection)</a></li>
+							<li><a href="index4.html">얼굴 인식(Face detection)</a></li>
+						</ul>
+					</li>
+				</ul>
+				<form class="navbar-form navbar-left">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="내용을 입력하세요.">
+					</div>
+					<button type = "submit" class="btn btn-default">검색</button>
+				</form>
+				<ul class="nav navbar-nav navbar-right">
+					<li class = "dropdown">
+						<a href="#" class ="dropdown-toggle" data-toggle="dropdown" role="button"
+							aria-haspopup="true" aria-expanded="false">접속하기<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="loginform.html">로그인</a></li>
+							<li><a href="registerForm.html ">회원가입</a></li>						 
+			</div>
+		</div>
+	</nav>
+
+        <h1><center>Video Streaming</center></h1>
+        <center><img src="{{ url_for('video_feed') }}"></center>
+        <br>
+        <center>
+        <a href="/r"><button>Take photo</button></a>
+        <a href="/stream" target="blank"><button>Stream</button></a>
+        </center>
+        <br>
+        
+		<footer style = "background-color: #000000; color: #ffffff">
+			<div class="container">
+					<div class="row">
+					<div class ="col-sm-2" style = "text-align: left;"><h5>Copyright &copy; 2022</h5><h5>최동철, 구광림, 김태호, 이여울, 박선규 </h5></div>
+					<div class ="col-sm-4"><h4> 팀 소개</h4><p>저희는 모션을 인식해 동작하는 카메라 프로그램을 구현하고자 하였습니다</p></div>
+					<div class ="col-sm-2"><h4 style="text-align: center;">내비게이션</h4>
+						<div class="list-group">
+							<a href="index2.html" class="list-group-item">사진 / 동영상</a>
+							<a href="index3.html" class="list-group-item">손동작 인식</a>
+							<a href="index4.html" class="list-group-item">얼굴 인식</a>
+						</div>
+					</div>
+					<div class ="col-sm-2"><h4 style="text-align: center;">SNS</h4>
+						<div class="list-group">
+							<a href="#" class="list-group-item">페이스북</a>
+							<a href="#" class="list-group-item">유튜브</a>
+							<a href="#" class="list-group-item">네이버 TV</a>
+						</div>
+					</div>
+					<div class = "col-sm-2"><h4 style="text-align: center;"><span class="glyphicon glyphicon-ok"></span>&nbsp;MediaPipe</h4></div>
+				</div>
+			</div>
+		</footer>
+		<script src = "https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src= "{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+		</body>
+	</html>
+
